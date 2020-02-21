@@ -19,7 +19,7 @@ class DataContainer extends React.Component {
     }
 
     handleSetTableData = (dataUrl) => {
-        // let url = this.toggler ? 'http://localhost:3000/data/file.csv' : 'http://localhost:3000/data/file-changed.csv';
+        // let url = this.toggler ? 'http://localhost:3000/csv/file.csv' : 'http://localhost:3000/csv/file-changed.csv';
         // this.toggler = !this.toggler;
 
         this.props.setTableData(dataUrl)
