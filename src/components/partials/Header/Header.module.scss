@@ -1,0 +1,55 @@
+@import '../../../static/scss/vars';
+@import '../../../static/scss/mixins';
+
+.header {
+    background-color: $color_bg;
+    padding: 2.5rem 4rem;
+
+    &__nav {
+        position: relative;
+    }
+
+    &__parts {
+        align-items: center;
+        display: flex;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    &__part {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &_logo {
+            align-items: center;
+            display: flex;
+            flex-grow: 1;
+            max-width: 50rem;
+        }
+
+        &_searchForm {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: right;
+
+            @media (min-width: $screen-md-min) {
+                display: block;
+                text-align: left;
+            }
+
+            @media (min-width: 1600px) {
+                margin: 0 auto;
+                max-width: 69rem;
+            }
+        }
+
+        &_nav {
+            margin-left: auto;
+            max-width: 50rem;
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+        }
+    }
+}

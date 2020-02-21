@@ -1,0 +1,6 @@
+@import "../../../static/scss/vars";
+@import "../../../static/scss/mixins";
+
+.btn {
+    @include btn;
+}

@@ -1,0 +1,8 @@
+@import "../../../../static/scss/vars";
+@import "../../../../static/scss/mixins";
+
+.input {
+    @include input;
+    max-width: 45rem;
+    margin-bottom: 2rem;
+}

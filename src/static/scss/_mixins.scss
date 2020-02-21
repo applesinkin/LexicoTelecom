@@ -1,0 +1,58 @@
+/* BannerButtons Mixins */
+
+@mixin btn-defaults() {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    flex-shrink: 0;
+    outline: none;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@mixin btn() {
+    @include btn-defaults();
+    background-color: $color_bg;
+    border: none;
+    border-radius: 0.4rem;
+    color: $color_title;
+    font-size: $fz;
+    line-height: $lh;
+    min-width: 11.2rem;
+    padding: 0.9rem 2rem 1rem;
+
+    &:hover {
+        background-color: $color_brand1;
+        color: $color_light;
+    }
+}
+
+/* Form Mixins */
+
+@mixin placeholder() {
+    &::-webkit-input-placeholder {
+        opacity: 1;
+        font-family: $font_text;
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        font-family: $font_text;
+    }
+    &:-ms-input-placeholder {
+        opacity: 1;
+        font-family: $font_text;
+    }
+}
+
+@mixin input() {
+    background-color: $color_light;
+    border: 1px solid $color_bg;
+    border-radius: 0.4rem;
+    color: $color_text;
+    display: block;
+    font-family: $font_text;
+    font-size: $fz;
+    line-height: $lh;
+    padding: 0.8rem 2rem 0.9rem;
+    width: 100%;
+}

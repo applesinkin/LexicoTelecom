@@ -1,0 +1,27 @@
+.table {
+    border: 1px solid #cfcfcf;
+    border-collapse:collapse;
+    border-radius: 0;
+    border-spacing:0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+
+    th,
+    td {
+        border: 1px solid #cfcfcf;
+        padding: 1rem;
+        vertical-align: top;
+    }
+
+    .parameters {
+        word-break: break-all;
+        min-width: 200px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        overflow: auto;
+        margin-bottom: 2.5rem;
+    }
+}
