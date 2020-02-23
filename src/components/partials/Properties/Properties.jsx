@@ -21,7 +21,7 @@ const Property = ({name = null, data = null}) => {
 
         return <>
             <dt className={s[valueClass]} onClick={toggleClass}>{name} <small>({dataType})</small></dt>
-            <dd className={s[valueClass]}>{data}</dd>
+            <dd className={s[valueClass]}>{'' + data}</dd>
         </>
 
     }  else if (typeof data === 'object') {
