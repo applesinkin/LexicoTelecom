@@ -15,14 +15,14 @@ import {setFilter} from "../../../redux/filters-reducer";
 class DataContainer extends React.Component {
     constructor(props) {
         super(props);
-        // this.toggler = true;
+        this.toggler = true;
     }
 
     handleSetTableData = (dataUrl) => {
-        // let url = this.toggler ? 'http://localhost:3000/csv/file.csv' : 'http://localhost:3000/csv/file-changed.csv';
-        // this.toggler = !this.toggler;
+        let url = this.toggler ? 'http://localhost:3000/csv/file.csv' : 'http://localhost:3000/csv/file-changed.csv';
+        this.toggler = !this.toggler;
 
-        this.props.setTableData(dataUrl)
+        this.props.setTableData(url)
     };
 
     render() {

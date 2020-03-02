@@ -4,7 +4,6 @@ import filterDataHelpers from "../utils/filterDataHelpers";
 
 export const getFileUrl = (state) => state.common.url;
 export const getTableData = (state) => state.common.data;
-export const getChanges = (state) => state.common.changes;
 export const getCommonHeadings = (state) => state.common.headings;
 export const getRoles = (state) => state.common.roles;
 export const getModalData = (state) => state.common.modalData;
@@ -35,4 +34,34 @@ export const getCommonDataSuper = createSelector( getTableData, getFiltersValues
 
 export const getModalDataSuper = createSelector(getModalData, (data) => {
     return data;
+});
+
+
+export const getChangesSuper = createSelector( getTableData, (data = null) => {
+
+    let storageData = localStorage.getItem('storageData');
+    if (!storageData ||  '[]' === storageData ||  'null' === storageData)
+        return data;
+
+    let lastDataTextsArr = JSON.parse(storageData).map( item => {
+        return JSON.stringify(item);
+    } );
+
+    let currentDataTextsArr = data.map( item => {
+        return JSON.stringify(item);
+    } );
+
+    let changesTextsArr = currentDataTextsArr.filter( item => {
+        if (lastDataTextsArr.includes(item)) {
+            return false;
+        }
+        return true;
+    } );
+
+    let changes = changesTextsArr.map( item => {
+        return JSON.parse(item);
+    } );
+
+    localStorage.setItem('storageData', JSON.stringify(data));
+    return changes;
 });
