@@ -19,7 +19,7 @@ const TextFilter = (props) => {
         setValue(value);
 
         setTimer( setTimeout( () => {
-            props.getFilteredResults('filter_by_text', value);
+            props.setFilter('filter_by_text', value);
             setTimer(null);
         }, 500 ) );
     };

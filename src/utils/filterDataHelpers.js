@@ -2,20 +2,22 @@ const filterDataHelpers = {
 
     filterByRole(data = [], role = null) {
         if (!data || !data.length)
-            return data;
+            return null;
+
         const result = data.filter( (item) => {
             if (item["role"] === role) {
                 return true;
             }
             return false;
         } );
+
         return result;
     },
 
 
     filterByText(data = [], text = "") {
         if (!text) {
-            return data;
+            return null;
         }
 
         const result = data.filter( (item) => {

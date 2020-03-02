@@ -10,8 +10,8 @@ const Filters = (props) => {
 
     return (
         <nav className={s.filters} action="">
-            <RolesFilter currentValue={rolesFilterValue} getFilteredResults={props.getFilteredResults} roles={props.roles}/>
-            <TextFilter currentValue={textFilterValue} getFilteredResults={props.getFilteredResults}/>
+            <RolesFilter currentValue={rolesFilterValue} setFilter={props.setFilter} roles={props.roles}/>
+            <TextFilter currentValue={textFilterValue} setFilter={props.setFilter}/>
         </nav>
     )
 };

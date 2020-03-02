@@ -11,7 +11,7 @@ const RolesFilter = ({roles, ...props}) => {
     const handleSetValue = (e) => {
         let value = e.target.value;
         setValue(value);
-        props.getFilteredResults('filter_by_roles', value);
+        props.setFilter('filter_by_roles', value);
     };
 
     let rolesOptions = roles.map(role => {

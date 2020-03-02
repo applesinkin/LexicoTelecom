@@ -17,7 +17,7 @@ const Data = ({setTableData, ...props}) => {
         <div>
             <h2>Data</h2>
 
-            <Filters getFilteredResults={props.getFilteredResults}
+            <Filters setFilter={props.setFilter}
                      filtersValues={props.filtersValues}
                      roles={props.roles}/>
 

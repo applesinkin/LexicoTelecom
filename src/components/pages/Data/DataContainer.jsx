@@ -9,8 +9,8 @@ import {
     getCommonDataSuper,
     getCommonHeadings
 } from "../../../redux/common-selectors";
-import {getFilteredResults} from "../../../redux/filters-reducer";
 import {getFiltersValues} from "../../../redux/filters-selectors";
+import {setFilter} from "../../../redux/filters-reducer";
 
 class DataContainer extends React.Component {
     constructor(props) {
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     setTableData,
-    getFilteredResults,
+    setFilter,
     setModalData,
     closeModal
 })(DataContainer);
