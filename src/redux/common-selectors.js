@@ -39,29 +39,28 @@ export const getModalDataSuper = createSelector(getModalData, (data) => {
 
 export const getChangesSuper = createSelector( getTableData, (data = null) => {
 
+    if (!data)
+        return null;
+
     let storageData = localStorage.getItem('storageData');
     if (!storageData ||  '[]' === storageData ||  'null' === storageData)
         return data;
 
-    let lastDataTextsArr = JSON.parse(storageData).map( item => {
-        return JSON.stringify(item);
+    let storageDataRows = JSON.parse(storageData).map( row => {
+        return JSON.stringify(row);
     } );
-
-    let currentDataTextsArr = data.map( item => {
-        return JSON.stringify(item);
+    let storageDataRowsSet = new Set(storageDataRows);
+    let currentDataRows = data.map( row => {
+        return JSON.stringify(row);
     } );
-
-    let changesTextsArr = currentDataTextsArr.filter( item => {
-        if (lastDataTextsArr.includes(item)) {
+    let changedDataRows = currentDataRows.filter( row => {
+        if ( storageDataRowsSet.has(row) ) {
             return false;
         }
         return true;
     } );
-
-    let changes = changesTextsArr.map( item => {
-        return JSON.parse(item);
+    let changedData = changedDataRows.map( row => {
+        return JSON.parse(row);
     } );
-
-    localStorage.setItem('storageData', JSON.stringify(data));
-    return changes;
+    return changedData;
 });
