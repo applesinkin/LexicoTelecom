@@ -10,4 +10,7 @@ const reducers = combineReducers({
     form: formReducer
 });
 
+
+// 123
+
 export default createStore(reducers, applyMiddleware(thunkMiddleware));
