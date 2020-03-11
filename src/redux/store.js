@@ -11,6 +11,7 @@ const reducers = combineReducers({
 });
 
 
-// 123
+
+// new test
 
 export default createStore(reducers, applyMiddleware(thunkMiddleware));
