@@ -14,7 +14,7 @@ function App() {
                 <div className="app__wrapper">
                     <Header/>
                     <div className="app__main" id="main-content">
-                        <div className="app__width">
+                        <div className="app__width">123
                             <Switch>
                                 <Route path="/data" render={() => <DataContainer/>} />
                                 <Route path="/settings" render={() => <SettingsContainer/>} />
