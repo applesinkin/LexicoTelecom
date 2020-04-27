@@ -9,6 +9,7 @@ import ChangesContainer from "./components/pages/Changes/ChangesContainer";
 
 function App() {
     console.log("test1");
+    console.log("test2");
     return (
         <BrowserRouter>
             <div className="app">
