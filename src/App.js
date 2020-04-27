@@ -8,6 +8,7 @@ import SettingsContainer from "./components/pages/Settings/SettingsContainer";
 import ChangesContainer from "./components/pages/Changes/ChangesContainer";
 
 function App() {
+    console.log("test1");
     return (
         <BrowserRouter>
             <div className="app">
