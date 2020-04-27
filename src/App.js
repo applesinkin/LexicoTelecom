@@ -10,6 +10,7 @@ import ChangesContainer from "./components/pages/Changes/ChangesContainer";
 function App() {
     console.log("test1");
     console.log("test2");
+    console.log("test3");
     return (
         <BrowserRouter>
             <div className="app">
