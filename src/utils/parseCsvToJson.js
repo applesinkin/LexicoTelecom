@@ -26,7 +26,7 @@ export const parseCsvToJson = (str) => {
             }
 
             return dataParsed[name] = value;
-        } )
+        } );
 
         return dataParsed;
     } );

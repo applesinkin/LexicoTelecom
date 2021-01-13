@@ -1,16 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
 import Data from "./Data";
-import {closeModal, setModalData, setTableData} from "../../../redux/common-reducer";
+import {closeModal, setModalData, setTableData} from "../../../redux/actions/common";
 import {
     getFileUrl,
     getModalDataSuper, getModalDisplayMode,
     getRoles,
     getCommonDataSuper,
     getCommonHeadings
-} from "../../../redux/common-selectors";
-import {getFiltersValues} from "../../../redux/filters-selectors";
-import {setFilter} from "../../../redux/filters-reducer";
+} from "../../../redux/selectors/common";
+import {getFiltersValues} from "../../../redux/selectors/filters";
+import {setFilter} from "../../../redux/actions/filters";
 
 class DataContainer extends React.Component {
     constructor(props) {

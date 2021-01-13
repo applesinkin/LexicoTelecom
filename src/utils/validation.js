@@ -1,17 +1,10 @@
-export const required = (value) => {
-    if (!value)
-        return 'This field must be required';
-
-    return undefined;
-};
+export const required = (value) => (
+    (!value) ? `This field must be required` : undefined
+);
 
 
 export const url = (value = '') => {
-    let reg = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+    let reg = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/gm;
     let found = value.match(reg);
-
-    if (value && !found)
-        return `Invalid url format`;
-
-    return undefined;
+    return (value && !found) ? `Invalid url format` : undefined;
 };

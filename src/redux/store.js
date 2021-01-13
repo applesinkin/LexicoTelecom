@@ -1,18 +1,5 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
-import commonReducer from "./common-reducer";
-import filtersReducer from "./filters-reducer";
-import { reducer as formReducer } from "redux-form";
+import {applyMiddleware, createStore} from "redux";
 import thunkMiddleware from "redux-thunk";
+import reducers from "./reducers"
 
-const reducers = combineReducers({
-    common: commonReducer,
-    filters: filtersReducer,
-    form: formReducer
-});
-
-
-// new test
-// 123
-//test master
-
-export default createStore(reducers, applyMiddleware(thunkMiddleware));
+export default createStore( reducers, applyMiddleware(thunkMiddleware) );

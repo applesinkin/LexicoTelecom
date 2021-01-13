@@ -1,47 +1,35 @@
-const filterDataHelpers = {
+export const filterByRole = (data = [], role = null) => {
+    if (!data || !data.length)
+        return null;
 
-    filterByRole(data = [], role = null) {
-        if (!data || !data.length)
-            return null;
-
-        const result = data.filter( (item) => {
-            if (item["role"] === role) {
-                return true;
-            }
-            return false;
-        } );
-
-        return result;
-    },
-
-
-    filterByText(data = [], text = "") {
-        if (!text) {
-            return null;
-        }
-
-        const result = data.filter( (item) => {
-            let columns = Object.keys(item);
-            for (let i = 0; i < columns.length; i++) {
-                let name = columns[i];
-
-                if (name === "role")
-                    continue;
-
-                let value = item[name];
-                if (name === "parameters") {
-                    value = JSON.stringify(value);
-                }
-                if (value && value.includes(text)) {
-                    return true;
-                }
-            }
-
-            return false;
-        } );
-
-        return result;
-    }
+    return data.filter((item) => item["role"] === role);
 };
 
-export default filterDataHelpers
+
+export const filterByText = (data = [], text = "") => {
+    if (!text) {
+        return null;
+    }
+
+    return data.filter( (item) => {
+
+        let columns = Object.keys(item);
+
+        for (let i = 0; i < columns.length; i++) {
+            let name = columns[i];
+
+            if (name === "role")
+                continue;
+
+            const value = (name === "parameters")
+                ? JSON.stringify(item[name])
+                : item[name];
+
+            if (value && value.includes(text)) {
+                return true;
+            }
+        }
+
+        return false;
+    } );
+};

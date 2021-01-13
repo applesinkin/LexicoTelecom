@@ -1,6 +1,6 @@
 import {createSelector} from "reselect";
-import {getFiltersValues} from "./filters-selectors";
-import filterDataHelpers from "../utils/filterDataHelpers";
+import {getFiltersValues} from "./filters";
+import {filterByRole, filterByText} from "../../utils/filterDataHelpers";
 
 export const getFileUrl = (state) => state.common.url;
 export const getTableData = (state) => state.common.data;
@@ -21,12 +21,12 @@ export const getCommonDataSuper = createSelector( getTableData, getFiltersValues
 
     if (filters.filter_by_roles) {
         let currentDataResults = resultData.length ? resultData[resultData.length - 1] : data;
-        resultData.push( filterDataHelpers.filterByRole(currentDataResults, filters.filter_by_roles) );
+        resultData.push( filterByRole(currentDataResults, filters.filter_by_roles) );
     }
 
     if (filters.filter_by_text) {
         let currentDataResults = resultData.length ? resultData[resultData.length - 1] : data;
-        resultData.push( filterDataHelpers.filterByText(currentDataResults, filters.filter_by_text) );
+        resultData.push( filterByText(currentDataResults, filters.filter_by_text) );
     }
 
     return resultData.length ? resultData[resultData.length - 1] : null;

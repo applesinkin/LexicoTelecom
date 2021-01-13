@@ -12,9 +12,9 @@ function App() {
         <BrowserRouter>
             <div className="app">
                 <div className="app__wrapper">
-                    <Header/>234
+                    <Header/>
                     <div className="app__main" id="main-content">
-                        <div className="app__width">123
+                        <div className="app__width">
                             <Switch>
                                 <Route path="/data" render={() => <DataContainer/>} />
                                 <Route path="/settings" render={() => <SettingsContainer/>} />

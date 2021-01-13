@@ -1,5 +1,4 @@
-const SET_FILTER = 'mindless/search/SET_FILTER';
-const CLEAR_FILTERS = 'mindless/search/CLEAR_FILTERS';
+import {CLEAR_FILTERS, SET_FILTER} from "../../const";
 
 const initialState = {
     filters: {
@@ -8,7 +7,7 @@ const initialState = {
     }
 };
 
-const filtersReducer = (state = initialState, action) => {
+const filters = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_FILTER:
@@ -36,7 +35,4 @@ const filtersReducer = (state = initialState, action) => {
     }
 };
 
-export const setFilter = (name, value) => ({type: SET_FILTER, name, value});
-export const clearFilters = () => ({type: CLEAR_FILTERS});
-
-export default filtersReducer;
+export default filters;

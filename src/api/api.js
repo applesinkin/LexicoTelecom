@@ -1,9 +1,4 @@
 // Common data DAL
-export const commonDataApi = {
-    getData(dataUrl) {
-        return fetch(dataUrl)
-            .then( r => {
-                return r;
-            } );
-    }
-};
+export const getDataApi = (dataUrl) => (
+    fetch(dataUrl).then(r => r)
+);

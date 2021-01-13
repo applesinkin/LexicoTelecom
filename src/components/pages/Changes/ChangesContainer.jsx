@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import Changes from "./Changes";
-import {getChangesSuper, getCommonHeadings, getModalDataSuper, getModalDisplayMode} from "../../../redux/common-selectors";
-import {closeModal, setModalData} from "../../../redux/common-reducer";
+import {getChangesSuper, getCommonHeadings, getModalDataSuper, getModalDisplayMode} from "../../../redux/selectors/common";
+import {closeModal, setModalData} from "../../../redux/actions/common";
 
 class ChangesContainer extends React.Component {
     render() {

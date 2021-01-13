@@ -5,33 +5,59 @@ import Modal from "../../partials/Modal/Modal";
 import Properties from "../../partials/Properties/Properties";
 import Button from "../../partials/Button/Button";
 
-const Data = ({setTableData, ...props}) => {
+const Data = ({
+    roles,
+    tableData,
+    handleSetTableData,
+    tableHeadings,
+    fileUrl,
+    setFilter,
 
-    const dataUrl = props.fileUrl;
+    filtersValues,
+    setModalData,
+    modalData,
+    closeModal,
+    isModalActive,
+}) => {
 
     let handleGetData = () => {
-        props.handleSetTableData(dataUrl)
+        handleSetTableData(fileUrl)
     };
 
     return (
         <div>
             <h2>Data</h2>
 
-            <Filters setFilter={props.setFilter}
-                     filtersValues={props.filtersValues}
-                     roles={props.roles}/>
+            <Filters
+                setFilter={setFilter}
+                filtersValues={filtersValues}
+                roles={roles}
+            />
 
-            <Table data={props.tableData}
-                   setModalData={props.setModalData}
-                   headings={props.tableHeadings}/>
+            <Table
+                data={tableData}
+                setModalData={setModalData}
+                headings={tableHeadings}
+            />
 
             <div>
-                <Button onClick={handleGetData} label={props.tableData ? "Update CSV" : "Download CSV"}/>
+                <Button
+                    onClick={handleGetData}
+                    label={tableData
+                        ? "Update CSV"
+                        : "Download CSV"
+                    }
+                />
             </div>
 
-            {props.isModalActive &&
-                <Modal title="Properties" closeModal={props.closeModal}>
-                    <Properties data={props.modalData}/>
+            {isModalActive &&
+                <Modal
+                    title="Properties"
+                    closeModal={closeModal}
+                >
+                    <Properties
+                        data={modalData}
+                    />
                 </Modal>
             }
         </div>

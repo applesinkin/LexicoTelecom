@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import Settings from "./Settings";
-import {getFileUrl} from "../../../redux/common-selectors";
-import {setFileUrl} from "../../../redux/common-reducer";
+import {getFileUrl} from "../../../redux/selectors/common";
+import {setFileUrl} from "../../../redux/actions/common";
 
 class SettingsContainer extends React.Component {
 
@@ -13,8 +13,12 @@ class SettingsContainer extends React.Component {
     };
 
     render() {
-        return <Settings fileUrl={this.props.fileUrl}
-                         submitSettings={this.submitSettings}/>
+        return (
+            <Settings
+                fileUrl={this.props.fileUrl}
+                submitSettings={this.submitSettings}
+            />
+        )
     }
 }
 

@@ -1,9 +1,21 @@
 import React from "react";
 import s from "./Button.module.scss";
 
-const Button = ({label = "button", onClick, ...props}) => {
+const Button = ({
+    label = "text",
+    onClick,
+    ...props
+}) => {
     return (
-        <button className={s.btn} type={props.type} onClick={onClick}>{label}</button>
+        <button
+            className={s.btn}
+            onClick={() => {
+                onClick && onClick()
+            }}
+            {...props}
+        >
+            {label}
+        </button>
     )
 };
 
